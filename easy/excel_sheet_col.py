@@ -12,17 +12,15 @@ class Solution(object):
         ret_str = ""
         while n > 26:
             to_append = n % 26
-            n = n / 26
+            n = n // 26
             if to_append == 0:
                 n -= 1
             ret_str = converter[to_append - 1] + ret_str
-            print(n)
         if n > 0:
-            to_append = n % 26
-            print(n,to_append)
-            ret_str = converter[to_append - 1] + ret_str
+            ret_str = converter[n - 1] + ret_str
         return ret_str
 
 
 if __name__ == "__main__":
-    print(Solution().convertToTitle(28))
+    for i in range(700,800):
+        print(i,Solution().convertToTitle(i))
